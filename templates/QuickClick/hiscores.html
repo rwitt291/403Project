@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+    
+  
+</style>
+
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <h1 class="fw-bolder">HiScores</h1>
+                <p class="lead fw-normal text-muted mb-0">Top ten scorers!</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-xl-8 col-xl-6">
+                    
+                            
+                                {% for person in scores|slice:":10"%}
+                                    <p align="center">       
+                                        {{ forloop.counter }}. {{person.name}} with a score of {{person.score}} &emsp;  
+                                        <a class="btn btn-primary btn-sm text-uppercase tab4" href="{%url 'editPlayer' playerID=person.id %}">Update Player</a>
+                                    </p>
+                                    <br>                                 
+                                {%endfor%}
+                            
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

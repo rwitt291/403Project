@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body>
+
+    
+
+
+    <!-- We didn't end up using this
+    {%for x in playerNameDict%}
+        {%if forloop.first%}
+            <h2>Hello,  {{x.name}}
+        {%endif%}
+    {%endfor%}
+    -->
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <h1 class="fw-bolder">Quick Click Game!</h1>
+                <p class="lead fw-normal text-muted mb-0">Click the button as fast as you can!</p>
+                <p class="lead fw-normal text-muted mb-0">Then the timer will start counting down.</p>
+                <p class="lead fw-normal text-muted mb-0">Once the timer hits zero, submit your score and see how you compare to the tep scores!</p>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <form action = "{% url 'game' %}" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+
+                    <!--Enter initials-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" name='ABBREV' id='ABBREV' minlength="3" maxlength="3" required>
+                        <label for='ABBREV'>Enter Your 3-letter Initials: </label>
+                    </div>
+
+                    <!--Click Game-->
+                    <h4 name='counterNum' id='counterNum'>Number of clicks: <span id = "counter">0</span></h4>
+                    <h4> The game will finish in : <span id="countdowntimer">10 </span><h4>
+                    <div class="d-grid"><button class="btn btn-primary btn-lg" type="button" id = "quickClickButton" onclick = "incrementClicks()">Click Me!</button></div>
+                    <br><br>
+                    <div class="d-grid"><button class="btn btn-warning btn-lg" type="button" id = "resetButton" onclick = "resetClicks()">Reset</button></div>
+
+                    
+                        <br>
+
+                    <div class="d-grid"><button class="btn btn-success btn-lg" type="submit" value="Submit">Submit Score</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    var clickCount = 0;
+    var stop = 0;
+    function incrementClicks(){
+        if (clickCount == 0){
+            clickCount = 1;
+            document.getElementById("id_score").value = clickCount;
+            counter.innerHTML = clickCount;
+            var timeleft = 10;
+            var downloadTimer = setInterval(function(){
+                timeleft--;
+                document.getElementById("countdowntimer").textContent = timeleft;
+                if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    stop = 1;
+                }
+            },1000);
+        }
+        else if (clickCount != 0 && stop != 1) {
+            clickCount = clickCount + 1;
+            counter.innerHTML = clickCount;
+            document.getElementById("id_score").value = clickCount;
+        }
+    }
+    function resetClicks(){
+        timeleft = 10;
+        clickCount = 0;
+        counter.innerHTML = clickCount;
+        document.getElementById("id_score").value = clickCount;
+        stop = 0;
+        document.getElementById("countdowntimer").textContent = timeleft;
+    }
+    {% comment %} var URL = "{% url 'hiscores' %}";
+    function updatePieFact(){
+        var data = {'clickCount': clickCount};
+        $.post(URL, data, function(response){
+            if(response === 'success'){ alert('Yay!'); }
+            else{ alert('Error! :('); }
+        }); {% endcomment %}
+</script>
+{% endblock %}

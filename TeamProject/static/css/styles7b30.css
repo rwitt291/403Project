@@ -1,0 +1,357 @@
+html, body {
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: sans-serif;
+}
+.spacer {
+  height: 1px;
+}
+.padder {
+  height: 20px;
+  margin-top: 150px;
+}
+.padder,
+.subtitle,
+.title {
+  background-color: #0b5ed7;
+}
+.subtitle {
+  text-align: center;
+  padding: 13px;
+}
+.subtitle .description {
+  font-size: 16px;
+  font-style: italic;
+}
+.scroll-down {
+  font-size: 16px;
+  font-weight: bold;
+}
+h1 {
+  font-family: sans-serif;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+}
+.citation {
+  color:#d0d8ff;
+}
+.title {
+  padding: 10px;
+  top: 0px;
+  text-align: center;
+  margin: auto;
+}
+.main {
+  margin: auto;
+  color: white;
+}
+.person {
+  background-size: 400px;
+}
+.people {
+  min-height: 250000px;
+  background-color: #ffffff;
+}
+.black .people {
+  background-image: url('../img/bg/black.svg');
+}
+.blue .people {
+  background-image: url('../img/bg/blue.svg');
+}
+.red .people {
+  background-image: url('../img/bg/red.svg');
+}
+.black-sparse .people {
+  background-image: url('../img/bg/black-sparse.svg');
+  background-size: 1000px;
+}
+.greyed .people {
+  background-image: url('../img/bg/grey.svg');
+  background-size: 1000px;
+  background-color: black;
+}
+html.black,
+html.blue,
+html.red,
+html.black-sparse,
+html.black body
+html.blue body
+html.red body
+html.black-sparse  body {
+  background-color: #fff0dd;
+}
+#people {
+  transition: background-color 1200ms, opacity 500ms;
+}
+.greyed .title {
+  opacity: 0;
+}
+.greyed .infobox-inner {
+  background-color: black;
+  color: white;
+  box-shadow: none;
+}
+.greyed a,
+.greyed a:visited {
+  color: #009fff;
+}
+.people .title {
+  position: sticky;
+  z-index: 10000;
+}
+.infobox.first {
+  margin-top: 2000px;
+}
+.infobox {
+  margin: auto;
+  max-width: 75%;
+}
+.infobox {
+  font-family: sans-serif;
+  margin-top: 1000px;
+  height: 5000px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.infobox-inner {
+  font-size: 18px;
+  top: 200px;
+  padding: 10px;
+  background-color: #0b5ed7;
+  box-shadow: -5px 5px 5px #505050;
+  max-width: 800px;
+  position: sticky;
+  z-index: 10;
+  display: inline-block;
+}
+
+.infobox-inner > h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.infobox.chart .infobox-inner {
+  top: 100px;
+  width: 100%;
+}
+.chart.horizontal .infobox-inner {
+  overflow: hidden;
+}
+.chart.expandable .bar {
+  padding-left: 0;
+  padding-right: 0;
+}
+.bar {
+  background-color: yellowgreen;
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+  box-shadow: -2px 2px 5px black;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+.bar-inner {
+  color: black;
+  margin-left: calc(100% + 6px);
+  white-space: nowrap;
+  display: inline-block;
+}
+.bar.highlighted {
+  background-color: #a3b4fd;
+}
+.bar.highlighted .bar-inner {
+  color: white;
+}
+.inset-text-desk.bar-inner {
+  width: calc(100% - 10px);
+  margin-left: 10px;
+  padding-right: 10px;
+}
+.chart.horizontal .bar.right {
+  text-align: right;
+  padding-right: 10px;
+}
+.bar.black {
+  background-color: black;
+}
+.over-bar-label {
+  margin-top: 35px;
+}
+.over-bar-label.first {
+  margin-top: 0;
+}
+.over-bar-label + .bar {
+  margin: 0;
+  background-color: #a3b4fd;
+  box-shadow: -2px 2px 4px black;
+  height: 40px;
+}
+.vertical-bars {
+  display: flex;
+}
+.vertical-bars .bar {
+  width: 25%;
+  color: black;
+  margin: 0 10px;
+  font-size: 12px;
+  padding: 5px;
+  background-color: #d0d8ff;
+  box-shadow: -2px 4px 4px black;
+}
+.vertical-bars .bar .bar-label {
+  position: sticky;
+  top: 60px;
+  height: 60px;
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 10px;
+}
+.vertical-bars .bar .bar-label.no-pad {
+  padding-top: 0;
+}
+.correctional-population {
+  margin-bottom: 28000px;
+}
+.correctional-population .infobox-inner {
+  height: 430px;
+}
+p:first-child {
+  margin-top: 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+.side-icon-blue {
+  float: left;
+  width: 20px;
+  padding-right: 5px;
+  padding-left: 10px;
+  background-color: #d0d8ff;
+}
+.side-icon {
+  float: left;
+  width: 20px;
+  padding-right: 5px;
+}
+.blue,
+.red {
+  margin-bottom: 5000px;
+}
+.floyd {
+  height: 18000px;
+  display: flex;
+  align-items: flex-start;
+}
+.floyd .infobox-inner {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+.floyd .infobox-inner.icon {
+  background-image: url('../img/person/red.svg');
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: 12px 25px;
+  height: 40px;
+}
+.floyd .infobox-inner.text {
+  height: 10000px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.chart img {
+  max-width: 100%;
+  height: auto;
+}
+.arrow {
+  padding-top: 7px;
+  position: relative;
+  right: 3px;
+  color: red;
+  font-size: 30px;
+}
+.counter {
+  font-family: monospace;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.vertical-bars .bar.white-men {
+  background-color: white;
+}
+.vertical-bars .bar.black-men {
+  background-color: black;
+  color: white;
+}
+.infobox-near-near {
+  margin-top: 100px;
+}
+.infobox-near {
+  margin-top: 1000px;
+}
+.infobox-half {
+  margin-top: 5000px;
+}
+.infobox-quarter {
+  margin-top: 2500px;
+}
+#freedom-wrapper {
+  height: 10000px;
+}
+#freedom, #better-world {
+  font-size: 28px;
+  font-weight: bold;
+}
+#freedom {
+  box-shadow: none;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  width: 360px;
+  display: block;
+}
+
+.mute .infobox {
+  display: none !important;
+}
+.unscroll #casualties,
+.unscroll #subgroup,
+.unscroll #dots,
+.unscroll #freedom-wrapper,
+.unscroll .infobox {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
+}
+.unscroll .floyd .infobox-inner.text {
+  padding: 0;
+  height: auto;
+}
+.unscroll .floyd .infobox-inner .highlight,
+.unscroll .infobox-inner {
+  position: static !important;
+  box-shadow: none;
+}
+.unscroll .expando {
+  display: none;
+}
+.unscroll .expandable .infobox-inner {
+  height: auto;
+}
+.unscroll .repression,
+.unscroll .correctional-population {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.unscroll .repression .infobox-inner,
+.unscroll .correctional-population .infobox-inner {
+  height: auto !important;
+}
+.unscroll .correctional-population .infobox-inner {
+  border: 4px dashed black;
+}

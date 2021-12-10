@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xxl-6">
+                <div class="text-center my-5">
+                    <h1 class="fw-bolder text-white">Welcome to Quick Click!</h1>
+                    <p class="lead fw-normal text-muted mb-4">The Objective of this game is to click the button as many times you can within the given time period!</p>
+                    <a class="btn btn-primary btn-lg" href="{% url 'game'%} ">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container px-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xxl-6">
+                <div class="text-center my-5">
+                    <h5 class="fw-bolder text-white">This game is brought to you by Group 2-10</h5>
+                    <p class="lead fw-normal text-muted mb-4">Parker Burnett <br> Rachel Wittwer <br> Nate Chandler <br> Mitch Buhler</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+    <!-- whatever we want to add -->
+
+    <!--
+        NEEDED DJANGO FORMS:
+
+            1. Index will be the landing page
+            2. Game will be where the user plays the click game
+                there will be a circle or something to click on and a timer
+                which counts down when the game begins
+            3. We will need a form to collect the user's initials that
+                they want to use for the scoreboard
+
+    -->
+    
+    
+{% endblock %}
+
